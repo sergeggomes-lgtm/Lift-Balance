@@ -138,6 +138,9 @@ export default function LogWorkout() {
   );
 }
 
+const WEIGHT_OPTIONS = Array.from({ length: 101 }, (_, i) => i * 5); // 0, 5, 10 … 500
+const REPS_OPTIONS   = Array.from({ length: 50  }, (_, i) => i + 1); // 1, 2, 3 … 50
+
 function ExerciseCard({ exercise, index, unit, onChange, onRemove }: { 
   exercise: Exercise, 
   index: number,
@@ -284,22 +287,26 @@ function ExerciseCard({ exercise, index, unit, onChange, onRemove }: {
             >
               <div className="w-10 text-center font-bold text-muted-foreground">{i + 1}</div>
               <div className="flex-1">
-                <input 
-                  type="number" 
-                  value={set.weight || ''}
+                <select
+                  value={set.weight}
                   onChange={e => updateSet(set.id, 'weight', Number(e.target.value))}
-                  placeholder="0"
-                  className="w-full bg-background border border-border rounded-xl py-2.5 px-3 text-center font-bold text-foreground focus:outline-none focus:border-primary transition-colors focus:bg-card"
-                />
+                  className="w-full bg-background border border-border rounded-xl py-2.5 px-2 text-center font-bold text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
+                >
+                  {WEIGHT_OPTIONS.map(w => (
+                    <option key={w} value={w}>{w}</option>
+                  ))}
+                </select>
               </div>
               <div className="flex-1">
-                <input 
-                  type="number" 
-                  value={set.reps || ''}
+                <select
+                  value={set.reps}
                   onChange={e => updateSet(set.id, 'reps', Number(e.target.value))}
-                  placeholder="0"
-                  className="w-full bg-background border border-border rounded-xl py-2.5 px-3 text-center font-bold text-foreground focus:outline-none focus:border-primary transition-colors focus:bg-card"
-                />
+                  className="w-full bg-background border border-border rounded-xl py-2.5 px-2 text-center font-bold text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
+                >
+                  {REPS_OPTIONS.map(r => (
+                    <option key={r} value={r}>{r}</option>
+                  ))}
+                </select>
               </div>
               <button 
                 onClick={() => removeSet(set.id)}
