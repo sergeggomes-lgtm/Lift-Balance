@@ -10,6 +10,7 @@ import History from './pages/History';
 import Summary from './pages/Summary';
 import Balance from './pages/Balance';
 import WorkoutDetail from './pages/WorkoutDetail';
+import WorkoutBuilder from './pages/WorkoutBuilder';
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/history" component={History} />
         <Route path="/summary" component={Summary} />
         <Route path="/balance" component={Balance} />
+        <Route path="/builder" component={WorkoutBuilder} />
         <Route path="/workout/:id" component={WorkoutDetail} />
         <Route component={NotFound} />
       </Switch>

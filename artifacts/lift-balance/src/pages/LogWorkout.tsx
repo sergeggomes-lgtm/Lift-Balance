@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { Plus, X, Settings2, Trash2, Dumbbell, Lightbulb } from 'lucide-react';
 import { useData } from '../context/DataContext';
-import { Exercise, Workout, MuscleGroup } from '../types';
+import { Exercise, Workout, MuscleGroup, WorkoutTemplate } from '../types';
 import { MUSCLE_GROUPS, MUSCLE_HEADS } from '../data/muscleGroups';
 import { EXERCISE_SUGGESTIONS } from '../data/exerciseSuggestions';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,10 +12,28 @@ export default function LogWorkout() {
   const today = format(new Date(), 'yyyy-MM-dd');
   
   const [workout, setWorkout] = useState<Workout>(() => {
+    try {
+      const pending = localStorage.getItem('lift_balance_pending_template');
+      if (pending) {
+        localStorage.removeItem('lift_balance_pending_template');
+        const template = JSON.parse(pending) as WorkoutTemplate;
+        return {
+          id: crypto.randomUUID(),
+          date: today,
+          exercises: template.exercises.map(ex => ({
+            id: crypto.randomUUID(),
+            name: ex.name,
+            muscleGroup: ex.muscleGroup,
+            muscleHead: ex.muscleHead,
+            sets: [{ id: crypto.randomUUID(), reps: 1, weight: 0 }],
+          })),
+        };
+      }
+    } catch { /* ignore */ }
     return workouts.find(w => w.date === today) || {
       id: crypto.randomUUID(),
       date: today,
-      exercises: []
+      exercises: [],
     };
   });
 

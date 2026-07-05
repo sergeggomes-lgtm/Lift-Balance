@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Dumbbell, History, BarChart2, Activity } from 'lucide-react';
+import { Dumbbell, History, BarChart2, Activity, ClipboardList } from 'lucide-react';
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -20,6 +20,7 @@ function BottomNav() {
   
   const navItems = [
     { path: '/', label: 'Log', icon: Dumbbell },
+    { path: '/builder', label: 'Builder', icon: ClipboardList },
     { path: '/history', label: 'History', icon: History },
     { path: '/summary', label: 'Summary', icon: BarChart2 },
     { path: '/balance', label: 'Balance', icon: Activity },

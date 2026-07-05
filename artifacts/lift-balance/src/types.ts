@@ -32,3 +32,17 @@ export type Workout = {
 export type Settings = {
   unit: 'lbs' | 'kg';
 };
+
+// ── Workout Templates ────────────────────────────────────────────────
+export type TemplateExercise = {
+  id: string;
+  name: string;
+  muscleGroup: MuscleGroup;
+  muscleHead: string;
+};
+
+export type WorkoutTemplate = {
+  id: string;
+  name: string;
+  exercises: TemplateExercise[];
+};
