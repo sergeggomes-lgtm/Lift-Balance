@@ -227,7 +227,7 @@ function ExerciseCard({ exercise, index, unit, onChange, onRemove }: {
         {exercise.sets.length > 0 && (
           <div className="flex text-[10px] font-black text-muted-foreground px-2 uppercase tracking-widest">
             <div className="w-10">Set</div>
-            <div className="flex-1 text-center">{settings.unit.toUpperCase()}</div>
+            <div className="flex-1 text-center">{unit.toUpperCase()}</div>
             <div className="flex-1 text-center">Reps</div>
             <div className="w-8"></div>
           </div>
