@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { Plus, X, Settings2, Trash2, Dumbbell } from 'lucide-react';
+import { Plus, X, Settings2, Trash2, Dumbbell, Lightbulb } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import { Exercise, Workout, MuscleGroup } from '../types';
 import { MUSCLE_GROUPS, MUSCLE_HEADS } from '../data/muscleGroups';
+import { EXERCISE_SUGGESTIONS } from '../data/exerciseSuggestions';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function LogWorkout() {
@@ -144,6 +145,8 @@ function ExerciseCard({ exercise, index, unit, onChange, onRemove }: {
   onChange: (e: Exercise) => void, 
   onRemove: () => void 
 }) {
+  const suggestions = EXERCISE_SUGGESTIONS[exercise.muscleHead] ?? [];
+
   const addSet = () => {
     const lastSet = exercise.sets[exercise.sets.length - 1];
     onChange({
@@ -181,6 +184,7 @@ function ExerciseCard({ exercise, index, unit, onChange, onRemove }: {
       exit={{ opacity: 0, scale: 0.95 }}
       className="bg-card rounded-2xl border border-border overflow-hidden shadow-lg shadow-black/20"
     >
+      {/* ── Header: muscle selectors + name ── */}
       <div className="p-4 border-b border-border bg-black/20 flex gap-4">
         <div className="w-10 h-10 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-black text-lg shrink-0 shadow-inner">
           {index}
@@ -194,6 +198,7 @@ function ExerciseCard({ exercise, index, unit, onChange, onRemove }: {
             className="w-full bg-transparent border-none text-foreground font-bold text-xl focus:outline-none focus:ring-0 p-0 placeholder:text-muted-foreground/40"
           />
           <div className="flex gap-2">
+            {/* Muscle Group */}
             <select 
               value={exercise.muscleGroup}
               onChange={e => {
@@ -201,28 +206,62 @@ function ExerciseCard({ exercise, index, unit, onChange, onRemove }: {
                 onChange({ 
                   ...exercise, 
                   muscleGroup: newGroup,
-                  muscleHead: MUSCLE_HEADS[newGroup][0]
+                  muscleHead: MUSCLE_HEADS[newGroup][0],
+                  name: '',
                 });
               }}
-              className="bg-background text-xs font-bold text-foreground border border-border rounded-lg px-2.5 py-2 focus:outline-none focus:border-primary w-[110px]"
+              className="bg-background text-xs font-bold text-foreground border border-border rounded-lg px-2.5 py-2 focus:outline-none focus:border-primary w-[100px] shrink-0"
             >
               {MUSCLE_GROUPS.map(g => <option key={g} value={g}>{g}</option>)}
             </select>
             
+            {/* Specific Muscle */}
             <select 
               value={exercise.muscleHead}
-              onChange={e => onChange({ ...exercise, muscleHead: e.target.value })}
-              className="bg-background text-xs font-bold text-primary border border-border rounded-lg px-2.5 py-2 focus:outline-none focus:border-primary flex-1 truncate"
+              onChange={e => onChange({ ...exercise, muscleHead: e.target.value, name: '' })}
+              className="bg-background text-xs font-bold text-primary border border-border rounded-lg px-2.5 py-2 focus:outline-none focus:border-primary flex-1 min-w-0"
             >
               {MUSCLE_HEADS[exercise.muscleGroup].map(h => <option key={h} value={h}>{h}</option>)}
             </select>
           </div>
         </div>
-        <button onClick={onRemove} className="text-muted-foreground hover:text-destructive h-fit p-1 bg-background rounded-lg border border-border transition-colors">
+        <button onClick={onRemove} className="text-muted-foreground hover:text-destructive h-fit p-1 bg-background rounded-lg border border-border transition-colors shrink-0">
           <X size={16} />
         </button>
       </div>
 
+      {/* ── Exercise Suggestions ── */}
+      {suggestions.length > 0 && (
+        <div className="px-4 pt-3 pb-0">
+          <div className="flex items-center gap-1.5 mb-2">
+            <Lightbulb size={12} className="text-primary" strokeWidth={2.5} />
+            <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">
+              Suggested for {exercise.muscleHead.split(' (')[0]}
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {suggestions.map(name => {
+              const isSelected = exercise.name === name;
+              return (
+                <button
+                  key={name}
+                  onClick={() => onChange({ ...exercise, name: isSelected ? '' : name })}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                    isSelected
+                      ? 'bg-primary text-primary-foreground border-primary shadow-sm shadow-primary/30'
+                      : 'bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-primary'
+                  }`}
+                >
+                  {name}
+                </button>
+              );
+            })}
+          </div>
+          <div className="mt-3 border-t border-border/50" />
+        </div>
+      )}
+
+      {/* ── Set Logger ── */}
       <div className="p-4 space-y-3">
         {exercise.sets.length > 0 && (
           <div className="flex text-[10px] font-black text-muted-foreground px-2 uppercase tracking-widest">
