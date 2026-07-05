@@ -138,8 +138,8 @@ export default function LogWorkout() {
   );
 }
 
-const WEIGHT_OPTIONS = Array.from({ length: 101 }, (_, i) => i * 5); // 0, 5, 10 … 500
-const REPS_OPTIONS   = Array.from({ length: 50  }, (_, i) => i + 1); // 1, 2, 3 … 50
+const WEIGHT_OPTIONS = Array.from({ length: 61 }, (_, i) => i * 5); // 0, 5, 10 … 300
+const REPS_OPTIONS   = Array.from({ length: 20 }, (_, i) => i + 1); // 1, 2, 3 … 20
 
 function ExerciseCard({ exercise, index, unit, onChange, onRemove }: { 
   exercise: Exercise, 
