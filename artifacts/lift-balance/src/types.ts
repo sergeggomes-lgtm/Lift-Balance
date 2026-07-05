@@ -1,4 +1,13 @@
-export type MuscleGroup = 'Chest' | 'Back' | 'Shoulders' | 'Arms' | 'Core' | 'Legs' | 'Glutes' | 'Calves';
+export type MuscleGroup =
+  | 'Chest'
+  | 'Back'
+  | 'Shoulders'
+  | 'Legs'
+  | 'Biceps'
+  | 'Triceps'
+  | 'Abs & Core'
+  | 'Forearms & Grip'
+  | 'Traps & Neck';
 
 export type Set = {
   id: string;

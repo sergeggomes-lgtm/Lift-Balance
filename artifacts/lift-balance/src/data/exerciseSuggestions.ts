@@ -1,294 +1,218 @@
-/** 3–4 exercise suggestions per muscle head. */
+/** Exercise suggestions per muscle head, sourced from curated list. */
 export const EXERCISE_SUGGESTIONS: Record<string, string[]> = {
   // ── Chest ───────────────────────────────────────────────
-  'Upper Chest (Clavicular)': [
-    'Incline Barbell Press',
+  'Upper Chest / Clavicular Pec': [
     'Incline Dumbbell Press',
-    'Cable Crossover (Low to High)',
-    'Landmine Press',
+    'Low-to-High Cable Fly',
   ],
-  'Mid Chest (Sternal)': [
-    'Flat Barbell Bench Press',
-    'Dumbbell Chest Press',
-    'Push-Up',
-    'Pec Deck Machine',
+  'Mid Chest': [
+    'Flat Dumbbell Press',
+    'Machine Chest Press',
   ],
-  'Lower Chest (Costal)': [
-    'Decline Bench Press',
-    'Decline Push-Up',
-    'Cable Crossover (High to Low)',
-    'Chest Dips',
+  'Lower Chest': [
+    'Weighted Dips',
+    'Decline Press',
   ],
   'Inner Chest': [
-    'Cable Crossover (Midpoint Squeeze)',
-    'Dumbbell Squeeze Press',
-    'Close-Grip Bench Press',
-    'Pec Deck (Short Range)',
+    'Cable Fly / Crossover',
+    'Pec Deck',
   ],
-  'Outer Chest': [
-    'Wide-Grip Push-Up',
-    'Dumbbell Flye',
-    'Cable Flye',
-    'Wide-Grip Bench Press',
+  'Full Chest Compound': [
+    'Barbell Bench Press',
+    'Weighted Push-Ups',
   ],
 
   // ── Back ────────────────────────────────────────────────
-  'Upper Traps': [
-    'Barbell Shrug',
-    'Dumbbell Shrug',
-    'Face Pull',
-    'Upright Row',
-  ],
-  'Mid Traps': [
-    'Seated Cable Row (Wide Grip)',
-    'Bent-Over Barbell Row',
-    'T-Bar Row',
-    'Chest-Supported Row',
-  ],
-  'Lower Traps': [
-    'Y-Raise (Prone)',
-    'Scapular Pull-Up',
-    'Straight-Arm Pulldown',
-    'Resistance Band Y-Press',
-  ],
-  'Rhomboids': [
-    'Face Pull',
-    'Band Pull-Apart',
-    'Seated Cable Row (Elbows Wide)',
-    'Bent-Over Rear Delt Row',
-  ],
-  'Upper Lats': [
-    'Wide-Grip Pull-Up',
-    'Wide-Grip Lat Pulldown',
-    'Straight-Arm Pulldown',
-    'Cable Overhead Extension',
+  'Lats / Width': [
+    'Pull-Ups / Chin-Ups',
+    'Lat Pulldown',
   ],
   'Lower Lats': [
-    'Narrow-Grip Pull-Up',
-    'Single-Arm Dumbbell Row',
-    'Meadows Row',
-    'Dumbbell Pullover',
+    'One-Arm Cable Pulldown',
+    'Neutral-Grip Pulldown',
   ],
-  'Teres Major': [
-    'Underhand Barbell Row',
-    'Single-Arm Cable Row (Elbow Out)',
-    'Dumbbell Row',
-    'Cable Straight-Arm Pulldown',
+  'Mid-Back / Rhomboids': [
+    'Chest-Supported Row',
+    'Seated Cable Row',
   ],
-  'Lower Back (Erectors)': [
-    'Conventional Deadlift',
-    'Hyperextension (Back Extension)',
-    'Good Morning',
+  'Upper Back / Traps': [
+    'Barbell Row',
+    'Face Pulls',
+  ],
+  'Rear Delts / Upper Back': [
+    'Reverse Pec Deck',
+    'Rear-Delt Cable Fly',
+  ],
+  'Spinal Erectors / Lower Back': [
     'Romanian Deadlift',
+    'Back Extension',
+  ],
+  'Full Back Compound': [
+    'Deadlift',
+    'Pull-Up',
+    'Row Variation',
   ],
 
   // ── Shoulders ───────────────────────────────────────────
-  'Front Delt (Anterior)': [
-    'Overhead Barbell Press',
-    'Dumbbell Front Raise',
-    'Arnold Press',
-    'Cable Front Raise',
+  'Front Delts': [
+    'Overhead Press',
+    'Incline Press',
   ],
-  'Side Delt (Lateral)': [
-    'Dumbbell Lateral Raise',
+  'Side Delts': [
     'Cable Lateral Raise',
-    'Machine Lateral Raise',
-    'Leaning Lateral Raise',
+    'Dumbbell Lateral Raise',
   ],
-  'Rear Delt (Posterior)': [
-    'Face Pull',
+  'Rear Delts': [
     'Reverse Pec Deck',
-    'Bent-Over Dumbbell Raise',
-    'Cable Rear Delt Flye',
+    'Rear-Delt Cable Fly',
   ],
-
-  // ── Arms ────────────────────────────────────────────────
-  'Biceps Short Head': [
-    'Preacher Curl',
-    'Concentration Curl',
-    'Wide-Grip Barbell Curl',
-    'Spider Curl',
+  'Full Shoulder Compound': [
+    'Seated Dumbbell Press',
+    'Standing Barbell Press',
   ],
-  'Biceps Long Head': [
-    'Incline Dumbbell Curl',
-    'Hammer Curl',
-    'Narrow-Grip Barbell Curl',
-    'Cable Curl (Narrow Grip)',
-  ],
-  'Brachialis': [
-    'Reverse Curl',
-    'Cross-Body Hammer Curl',
-    'Zottman Curl',
-    'Pinch-Grip Curl',
-  ],
-  'Brachioradialis': [
-    'Reverse Barbell Curl',
-    'Neutral-Grip Dumbbell Curl',
-    'Hammer Curl',
-    'Wrist Roller',
-  ],
-  'Triceps Long Head': [
-    'Overhead Dumbbell Extension',
-    'Skull Crusher',
-    'Cable Overhead Triceps Extension',
-    'Close-Grip Bench Press',
-  ],
-  'Triceps Lateral Head': [
-    'Rope Triceps Pushdown',
-    'Dumbbell Kickback',
-    'Close-Grip Push-Up',
-    'Bar Pushdown (Overhand)',
-  ],
-  'Triceps Medial Head': [
-    'Reverse-Grip Pushdown',
-    'Diamond Push-Up',
-    'Close-Grip Bench Press',
-    'Overhead Triceps Extension (Cable)',
-  ],
-  'Forearm Extensors': [
-    'Reverse Barbell Curl',
-    'Wrist Extension (Dumbbell)',
-    'Plate Pinch Hold',
-    "Farmer's Carry",
-  ],
-  'Forearm Flexors': [
-    'Barbell Wrist Curl',
-    'Dumbbell Wrist Curl',
-    "Farmer's Carry",
-    'Towel Pull-Up',
-  ],
-
-  // ── Core ────────────────────────────────────────────────
-  'Upper Abs': [
-    'Cable Crunch',
-    'Decline Sit-Up',
-    'Crunch',
-    'Jackknife Sit-Up',
-  ],
-  'Lower Abs': [
-    'Hanging Leg Raise',
-    'Reverse Crunch',
-    'Dragon Flag',
-    'Ab Wheel Rollout',
-  ],
-  'Obliques (External)': [
-    'Cable Woodchop',
-    'Bicycle Crunch',
-    'Side Plank',
-    'Russian Twist',
-  ],
-  'Obliques (Internal)': [
-    'Pallof Press',
-    'Dead Bug',
-    'Side Bend (Dumbbell)',
-    'Cable Side Bend',
-  ],
-  'Transverse Abdominis': [
-    'Plank',
-    'Dead Bug',
-    'Bird Dog',
-    'Stomach Vacuum',
-  ],
-  'Serratus Anterior': [
-    'Serratus Punch (Cable)',
-    'Push-Up Plus',
-    'Dumbbell Pullover',
-    'Ab Wheel Rollout',
+  'Shoulder Health / Stability': [
+    'Face Pulls',
+    'Cable External Rotations',
   ],
 
   // ── Legs ────────────────────────────────────────────────
-  'Quads (Rectus Femoris)': [
-    'Back Squat',
-    'Sissy Squat',
+  'Quads': [
+    'Squat',
+    'Leg Press',
+  ],
+  'Rectus Femoris / Quads': [
     'Leg Extension',
+    'Front Squat',
+  ],
+  'Hamstrings, Hip-Hinge': [
+    'Romanian Deadlift',
+    'Good Morning',
+  ],
+  'Hamstrings, Knee-Flexion': [
+    'Seated Leg Curl',
+    'Lying Leg Curl',
+  ],
+  'Glutes': [
+    'Hip Thrust',
     'Bulgarian Split Squat',
   ],
-  'Quads (Vastus Lateralis)': [
-    'Hack Squat',
-    'Leg Press (Narrow Stance)',
-    'Pendulum Squat',
-    'Lateral Lunge',
-  ],
-  'Quads (Vastus Medialis)': [
-    'Close-Stance Squat',
-    'Terminal Knee Extension',
-    'Step-Up',
-    'Spanish Squat',
-  ],
-  'Hamstrings (Biceps Femoris)': [
-    'Romanian Deadlift',
-    'Seated Leg Curl',
-    'Nordic Hamstring Curl',
-    'Glute-Ham Raise',
-  ],
-  'Hamstrings (Semitendinosus)': [
-    'Lying Leg Curl',
-    'Sumo Deadlift',
-    'Stiff-Leg Deadlift',
-    'Kettlebell Swing',
-  ],
-  'Inner Thigh (Adductors)': [
-    'Sumo Squat',
-    'Adductor Machine',
-    'Cable Adduction',
-    'Side Lunge',
-  ],
-  'IT Band / TFL': [
-    'Lateral Band Walk',
-    'Clamshell',
-    'Lateral Leg Raise',
-    'Monster Walk',
-  ],
-
-  // ── Glutes ──────────────────────────────────────────────
-  'Glute Max': [
-    'Barbell Hip Thrust',
-    'Back Squat',
-    'Romanian Deadlift',
-    'Cable Kickback',
-  ],
-  'Glute Med': [
-    'Side-Lying Abduction',
-    'Clamshell',
-    'Lateral Band Walk',
-    'Single-Leg Hip Thrust',
-  ],
-  'Glute Min': [
+  'Glute Medius / Outer Hip': [
     'Cable Hip Abduction',
-    'Fire Hydrant',
-    'Mini-Band Walk',
-    'Lateral Step-Up',
+    'Lateral Band Walks',
   ],
-  'Piriformis': [
-    'Fire Hydrant',
-    'Hip External Rotation (Cable)',
-    'Seated Figure-Four Stretch',
-    'Clamshell',
+  'Adductors / Inner Thigh': [
+    'Adductor Machine',
+    'Sumo Squat',
   ],
-
-  // ── Calves ──────────────────────────────────────────────
-  'Gastrocnemius (Lateral)': [
+  'Calves, Gastrocnemius': [
     'Standing Calf Raise',
     'Donkey Calf Raise',
-    'Box Jump',
-    'Jump Rope',
   ],
-  'Gastrocnemius (Medial)': [
-    'Standing Calf Raise (Toes In)',
-    'Smith Machine Calf Raise',
-    'Leg Press Calf Press',
-    'Single-Leg Calf Raise',
-  ],
-  'Soleus': [
+  'Calves, Soleus': [
     'Seated Calf Raise',
-    'Single-Leg Seated Calf Raise',
     'Bent-Knee Calf Raise',
-    'Angled Leg Press Calf Raise',
   ],
-  'Tibialis Anterior': [
-    'Toe Raise (Standing)',
-    'Tibialis Raise (Machine)',
-    'Resisted Dorsiflexion (Band)',
-    'Tib Bar Raise',
+  'Full Lower Body Compound': [
+    'Squat',
+    'Trap-Bar Deadlift',
+    'Walking Lunge',
+  ],
+
+  // ── Biceps ──────────────────────────────────────────────
+  'Long Head / Outer Biceps': [
+    'Incline Dumbbell Curl',
+    'Bayesian Cable Curl',
+  ],
+  'Short Head / Inner Biceps': [
+    'Preacher Curl',
+    'Spider Curl',
+  ],
+  'Brachialis': [
+    'Hammer Curl',
+    'Cross-Body Hammer Curl',
+  ],
+  'Forearm / Brachioradialis': [
+    'Reverse Curl',
+    'Zottman Curl',
+  ],
+  'Full Biceps': [
+    'Standing Barbell Curl',
+    'Cable Curl',
+  ],
+
+  // ── Triceps ─────────────────────────────────────────────
+  'Long Head': [
+    'Overhead Cable Extension',
+    'Skull Crusher',
+  ],
+  'Lateral Head': [
+    'Rope Pressdown',
+    'Close-Grip Bench Press',
+  ],
+  'Medial Head': [
+    'Reverse-Grip Pressdown',
+    'Dips',
+  ],
+  'Full Triceps Compound': [
+    'Close-Grip Bench Press',
+    'Weighted Dips',
+  ],
+  'Constant Tension': [
+    'Cable Triceps Pressdown',
+    'Cable Overhead Extension',
+  ],
+
+  // ── Abs & Core ──────────────────────────────────────────
+  'Upper Abs': [
+    'Cable Crunch',
+    'Machine Crunch',
+  ],
+  'Lower Abs': [
+    'Hanging Knee Raise',
+    'Reverse Crunch',
+  ],
+  'Obliques': [
+    'Cable Wood Chop',
+    'Side Plank',
+  ],
+  'Deep Core / Stability': [
+    'Dead Bug',
+    'Pallof Press',
+  ],
+  'Full Core': [
+    'Ab Wheel Rollout',
+    'Plank Variation',
+  ],
+
+  // ── Forearms & Grip ─────────────────────────────────────
+  'Wrist Flexors': [
+    'Wrist Curls',
+    'Cable Wrist Curls',
+  ],
+  'Wrist Extensors': [
+    'Reverse Wrist Curls',
+    'Reverse Curls',
+  ],
+  'Grip Strength': [
+    "Farmer's Carries",
+    'Dead Hangs',
+  ],
+  'Full Forearm': [
+    'Hammer Curls',
+    'Zottman Curls',
+  ],
+
+  // ── Traps & Neck ────────────────────────────────────────
+  'Upper Traps': [
+    'Dumbbell Shrug',
+    'Trap-Bar Shrug',
+  ],
+  'Mid / Lower Traps': [
+    'Face Pulls',
+    'Prone Y-Raise',
+  ],
+  'Full Traps': [
+    "Farmer's Carries",
+    'Deadlifts',
   ],
 };

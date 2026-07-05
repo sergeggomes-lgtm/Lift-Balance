@@ -1,0 +1,67 @@
+Chest
+Chest area	Best exercises
+Upper chest / clavicular pec	Incline dumbbell press, low-to-high cable fly
+Mid chest	Flat dumbbell press, machine chest press
+Lower chest	Weighted dips, decline press
+Inner chest emphasis	Cable fly/crossover, pec deck
+Full chest compound	Barbell bench press, push-ups weighted if needed
+Back
+Back area	Best exercises
+Lats, width	Pull-ups/chin-ups, lat pulldown
+Lower lats	One-arm cable pulldown, neutral-grip pulldown
+Mid-back / rhomboids	Chest-supported row, seated cable row
+Upper back / traps	Barbell row, face pulls
+Rear delts/upper back	Reverse pec deck, rear-delt cable fly
+Spinal erectors/lower back	Romanian deadlift, back extension
+Full back compound	Deadlift, pull-up, row variation
+Shoulders
+Shoulder area	Best exercises
+Front delts	Overhead press, incline press
+Side delts	Cable lateral raise, dumbbell lateral raise
+Rear delts	Reverse pec deck, rear-delt cable fly
+Full shoulder compound	Seated dumbbell press, standing barbell press
+Shoulder health/stability	Face pulls, cable external rotations
+Legs
+Leg area	Best exercises
+Quads	Squat, leg press
+Rectus femoris/quads	Leg extension, front squat
+Hamstrings, hip-hinge	Romanian deadlift, good morning
+Hamstrings, knee-flexion	Seated leg curl, lying leg curl
+Glutes	Hip thrust, Bulgarian split squat
+Glute medius/outer hip	Cable hip abduction, lateral band walks
+Adductors/inner thigh	Adductor machine, sumo squat
+Calves, gastrocnemius	Standing calf raise, donkey calf raise
+Calves, soleus	Seated calf raise, bent-knee calf raise
+Full lower body compound	Squat, trap-bar deadlift, walking lunge
+Biceps
+Biceps area	Best exercises
+Long head / outer biceps	Incline dumbbell curl, Bayesian cable curl
+Short head / inner biceps	Preacher curl, spider curl
+Brachialis	Hammer curl, cross-body hammer curl
+Forearm/brachioradialis	Reverse curl, Zottman curl
+Full biceps	Standing barbell curl, cable curl
+Triceps
+Triceps area	Best exercises
+Long head	Overhead cable extension, skull crusher
+Lateral head	Rope pressdown, close-grip bench press
+Medial head	Reverse-grip pressdown, dips
+Full triceps compound	Close-grip bench press, weighted dips
+Constant tension	Cable triceps pressdown, cable overhead extension
+Abs and Core
+Core area	Best exercises
+Upper abs	Cable crunch, machine crunch
+Lower abs	Hanging knee raise, reverse crunch
+Obliques	Cable wood chop, side plank
+Deep core/stability	Dead bug, Pallof press
+Full core	Ab wheel rollout, plank variation
+Forearms and Grip
+Area	Best exercises
+Wrist flexors	Wrist curls, cable wrist curls
+Wrist extensors	Reverse wrist curls, reverse curls
+Grip strength	Farmer’s carries, dead hangs
+Full forearm	Hammer curls, Zottman curls
+Traps and Neck Area
+Area	Best exercises
+Upper traps	Dumbbell shrug, trap-bar shrug
+Mid/lower traps	Face pulls, prone Y-raise
+Full traps	Farmer’s carries, deadlifts
