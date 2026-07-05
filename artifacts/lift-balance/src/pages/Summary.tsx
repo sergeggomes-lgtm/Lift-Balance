@@ -8,13 +8,13 @@ import { motion } from 'framer-motion';
 
 export default function Summary() {
   const { workouts, settings } = useData();
-  const [timeframe, setTimeframe] = useState<'week' | 'month'>('week');
+  const [timeframe, setTimeframe] = useState<'week' | 'month' | 'all'>('week');
 
   const stats = useMemo(() => {
     const now = new Date();
-    const startDate = timeframe === 'week' ? startOfWeek(now, { weekStartsOn: 1 }) : startOfMonth(now);
-    
-    const validWorkouts = workouts.filter(w => {
+
+    const validWorkouts = timeframe === 'all' ? workouts : workouts.filter(w => {
+      const startDate = timeframe === 'week' ? startOfWeek(now, { weekStartsOn: 1 }) : startOfMonth(now);
       const wDate = parseISO(w.date);
       return isAfter(wDate, startDate) || wDate.getTime() === startDate.getTime();
     });
@@ -62,6 +62,12 @@ export default function Summary() {
             className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${timeframe === 'month' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
           >
             This Month
+          </button>
+          <button 
+            onClick={() => setTimeframe('all')}
+            className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${timeframe === 'all' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            All Time
           </button>
         </div>
 
