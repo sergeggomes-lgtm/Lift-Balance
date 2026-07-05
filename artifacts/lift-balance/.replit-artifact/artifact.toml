@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Lift Balance"
+version = "1.0.0"
+id = "artifacts/lift-balance"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21786
+
+[services.development]
+run = "pnpm --filter @workspace/lift-balance run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/lift-balance", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/lift-balance/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21786"
+BASE_PATH = "/"
